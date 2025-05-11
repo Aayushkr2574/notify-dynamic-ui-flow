@@ -1,6 +1,8 @@
 
 import React from "react";
 import { Button } from "@/components/ui/button";
+import { BellRing } from "lucide-react";
+import { toast } from "@/hooks/use-toast";
 
 const CTA = () => {
   const handleSendNotification = async () => {
@@ -22,15 +24,34 @@ const CTA = () => {
             }
           });
           
+          toast({
+            title: "Notification sent",
+            description: "Check your notifications tray",
+          });
+          
           console.log('Notification sent!');
         } else {
+          toast({
+            title: "Notification permission denied",
+            description: "Please enable notifications in your browser settings",
+            variant: "destructive",
+          });
           console.log('Notification permission denied');
         }
       } catch (error) {
         console.error('Error sending notification:', error);
+        toast({
+          title: "Error",
+          description: "Could not send notification",
+          variant: "destructive",
+        });
       }
     } else {
-      alert('Push notifications are not supported in your browser');
+      toast({
+        title: "Not supported",
+        description: "Push notifications are not supported in your browser",
+        variant: "destructive",
+      });
     }
   };
 
@@ -44,9 +65,10 @@ const CTA = () => {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
-              className="btn-secondary bg-white text-lookscout-blue hover:bg-blue-50"
+              className="btn-secondary bg-white text-lookscout-blue hover:bg-blue-50 flex items-center gap-2"
               onClick={handleSendNotification}
             >
+              <BellRing size={18} />
               Send Notification
             </Button>
             <Button className="btn-secondary bg-transparent text-white border-white hover:bg-blue-800/20">

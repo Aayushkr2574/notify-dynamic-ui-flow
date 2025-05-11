@@ -51,7 +51,7 @@ self.addEventListener('fetch', (event) => {
 
 // Push notification event handler
 self.addEventListener('push', (event) => {
-  const data = event.data.json();
+  const data = event.data ? event.data.json() : {};
   const options = {
     body: data.body || 'New notification from Lookscout',
     icon: '/icon-192.png',
