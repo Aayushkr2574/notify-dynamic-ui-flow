@@ -17,7 +17,6 @@ const CTA = () => {
           registration.showNotification('Lookscout Notification', {
             body: 'Thanks for enabling notifications!',
             icon: '/icon-192.png',
-            vibrate: [100, 50, 100],
             data: {
               url: window.location.href
             }
