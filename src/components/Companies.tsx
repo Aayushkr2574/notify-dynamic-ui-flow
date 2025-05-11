@@ -3,12 +3,10 @@ import React from "react";
 
 const Companies = () => {
   const companies = [
-    { name: "The Verge", logoPath: "/lovable-uploads/verge.png" },
+    { name: "Airbnb", logoPath: "/lovable-uploads/airbnb.png" },
     { name: "Slack", logoPath: "/lovable-uploads/slack.png" },
-    { name: "Google", logoPath: "/lovable-uploads/google.png" },
-    { name: "PayPal", logoPath: "/lovable-uploads/paypal.png" },
-    { name: "Pinterest", logoPath: "/lovable-uploads/pinterest.png" },
-    { name: "Mailchimp", logoPath: "/lovable-uploads/mailchimp.png" }
+    { name: "Netflix", logoPath: "/lovable-uploads/netflix.png" },
+    { name: "PayPal", logoPath: "/lovable-uploads/paypal.png" }
   ];
 
   return (
@@ -21,7 +19,7 @@ const Companies = () => {
           </p>
         </div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-10 items-center justify-items-center">
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-8 md:gap-10 items-center justify-items-center">
           {companies.map((company, index) => (
             <div 
               key={index} 
