@@ -21,9 +21,12 @@ const Companies = () => {
           </p>
         </div>
 
-        <div className="flex flex-wrap justify-center items-center gap-8 md:gap-16">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8 md:gap-10 items-center justify-items-center">
           {companies.map((company, index) => (
-            <div key={index} className="w-32 h-12 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300">
+            <div 
+              key={index} 
+              className="w-full h-20 flex items-center justify-center grayscale hover:grayscale-0 transition-all duration-300 hover:scale-110"
+            >
               <img 
                 src={company.logoPath} 
                 alt={company.name} 
